@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>Edit Case | {{ pet.name }}</title>
+    <style>
+        :root { --primary-navy: #1a2a3a; --accent-gold: #c5a059; }
+        body { background-color: #f4f4f2; font-family: 'Inter', sans-serif; }
+        h2 { font-family: 'Playfair Display', serif; color: var(--primary-navy); }
+        .card { border-radius: 0; border: 1px solid #e0e0e0; padding: 40px; }
+        .form-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--accent-gold); letter-spacing: 1px; }
+        .form-control, .form-select { border-radius: 0; padding: 10px; }
+        .btn-save { background: var(--primary-navy); color: white; border-radius: 0; font-weight: 600; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="mb-4">Edit Profile: {{ pet.name }}</h2>
+            <div class="card shadow-sm">
+                <form action="{{ url_for('edit_pet', pet_id=pet.id) }}" method="POST" enctype="multipart/form-data">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Pet Name</label>
+                            <input type="text" name="name" class="form-control" value="{{ pet.name }}" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Breed</label>
+                            <input type="text" name="breed" class="form-control" value="{{ pet.breed }}" required>
+                        </div>
+                        </div>
+                    <div class="mt-4 pt-3 border-top d-flex gap-2">
+                        <button type="submit" class="btn btn-save px-5">Commit Changes</button>
+                        <a href="/admin/dashboard" class="btn btn-light rounded-0">Discard</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
