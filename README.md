@@ -33,3 +33,39 @@ pet_adoption_system/
     ├── admin.html         # Unified Staff Login & Dashboard
     ├── admin_accounts.html# Staff Access & Permission Management
     └── edit_pet.html      # Clinical Record Management Interface
+
+
+
+
+🚀 Deployment & Installation
+1. Configure MySQL Database
+Create a database named pet_adoption in your MySQL environment. The system is configured to connect via: mysql+pymysql://root:@localhost/pet_adoption
+
+2. Install Dependencies
+Run the following command in your terminal:
+
+Bash
+pip install -r requirements.txt
+3. Setup SMTP (Email)
+To enable the automated email feature:
+
+Enable "App Passwords" in your Google Account security settings.
+
+Update the MAIL_PASSWORD in app.py with your 16-character code.
+
+4. Launch System
+Bash
+python app.py
+Default Admin Credentials: * User: admin
+
+Pass: password123
+
+Note: The system will prompt you to change this upon your first successful login.
+
+📍 Contact & Credits
+Developer: Patch
+
+Location: Marikina City, Philippines
+
+Mission: Standardizing pet welfare through modern technology.
+
