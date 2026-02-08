@@ -1,30 +1,72 @@
-# 🐾 PetAdopt: A Modern Pet Adoption Management System
+🐾 PetAdopt: Professional Animal Welfare Management System
+An aesthetic, high-security, and feature-rich web platform designed to streamline the transition between animal sanctuaries and responsible guardians. Built as a comprehensive full-stack project, this system focuses on verified security, medical transparency, and automated communication.
 
-An aesthetic, simple, and secure web-based platform designed to connect homeless pets with loving families. This project was built as a college requirement to demonstrate full-stack integration using Python and SQL.
+✨ Advanced Features
 
-## ✨ Features
-* **Aesthetic UI:** Modern "Soft UI" design using Bootstrap 5 and custom CSS.
-* **Pet Gallery:** Dynamic display of available pets pulled directly from the database.
-* **Secure Adoption Form:** Adopters can submit requests without needing an account.
-* **Verified ID Upload:** Mandatory identity verification for safer adoptions.
-* **Admin Dashboard:** A secured area for staff to manage adoption requests and view uploaded IDs.
-* **Donation Integration:** Clear channels for GCash, Maya, and Bank transfers.
+Professional Gallery: High-fidelity profiles featuring detailed breed data, energy levels, and size categories.
 
-## 🛠️ Tech Stack
-* **Backend:** Python (Flask)
-* **Database:** SQLite (SQLAlchemy ORM)
-* **Frontend:** HTML5, CSS3, Bootstrap 5
-* **Security:** Werkzeug for secure file uploads and Flask Sessions for Admin auth.
 
-## 📂 Project Structure
-```text
+Clinical Records Tracking: Manage vaccination statuses, sterilization (spay/neuter) records, and medical history dates directly in the database.
+
+
+Automated Email Engine: Automatically sends professional approval/decline notices to adopters via SMTP (Gmail integration), including next-step instructions and Google Form links.
+
+
+Secured Staff Portal: Protected Admin Dashboard for inventory management and adoption request processing.
+
+
+Audit Logging: Every administrative action (pet registration, profile updates, account deletions) is timestamped and logged for accountability.
+
+
+Government ID Verification: Mandatory digital ID uploads processed through a secure file-handling system.
+
+🛠️ Tech Stack
+Backend: Python 3.10+ (Flask Framework)
+
+
+Database: MySQL (leveraging SQLAlchemy ORM for relational integrity) 
+
+Frontend: HTML5, CSS3 (Custom "Heritage" Aesthetic), Bootstrap 5.3
+
+
+Communication: Flask-Mail (SMTP Integration) 
+
+
+Security: Werkzeug (Password Hashing), UUID (Unique File Obfuscation), and Secure Session Management 
+
+📂 System Architecture
+Plaintext
 pet_adoption_system/
-├── app.py              # Flask Backend & Database Logic
-├── database.db         # SQLite Database (Auto-generated)
+├── app.py                 # Core Engine: Routes, Models, & Email Logic
+├── requirements.txt       # System Dependencies
 ├── static/
-│   ├── style.css       # Custom Aesthetic Styling
-│   └── uploads/        # Store for Verified IDs (Git-ignored)
+│   ├── style.css          # Custom Styling (Playfair Display/Inter Fonts)
+│   └── uploads/           # Obfuscated Storage for IDs & Pet Photos
 └── templates/
-    ├── index.html      # Landing Page (Mission/Vision/Pets)
-    ├── adopt.html      # Submission Form
-    └── admin.html      # Secured Dashboard
+    ├── index.html         # Public Landing Page & Journey
+    ├── adopt.html         # Formal Application Form
+    ├── admin.html         # Unified Staff Login & Dashboard
+    ├── admin_accounts.html# Staff Access & Permission Management
+    └── edit_pet.html      # Clinical Record Management Interface
+🚀 Deployment & Installation
+Configure MySQL Database:
+
+Create a database named pet_adoption.
+
+Update the URI in app.py: mysql+pymysql://root:@localhost/pet_adoption.
+
+Install Dependencies:
+
+Bash
+pip install -r requirements.txt
+Setup SMTP (Email):
+
+Enable "App Passwords" in your Gmail settings.
+
+Update app.config['MAIL_PASSWORD'] with your 16-character code.
+
+Launch System:
+
+Bash
+python app.py
+Default Admin Credentials: User: admin | Pass: password123 (System will prompt for change).
